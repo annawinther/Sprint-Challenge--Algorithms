@@ -96,9 +96,21 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        
+
         # Start at the beginning and use selection sort to check each item if its smaller than the one the robot is holding. If it's smaller, swap them, and move to the right. 
         # Keep doing this and go over each item until we have a sorted list.
+        # In order to swap the items the light needs to be on so the robot can see
+
+        # BROKEN DOWN PSUEDO CODE
+        # check if the robot is at the beginning of the list
+            # if he cannot move to the right 
+            # set the light on and check if there is an item where he is. 
+                # if there is, compare them 
+                    # swap if the one he's holding is greater than the one comparing with
+                # otherwise swap with None
+            # once finished, move to the left and compare and check again
+        
+
         pass
 
 
