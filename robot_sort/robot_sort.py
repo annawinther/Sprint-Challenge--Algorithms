@@ -96,7 +96,9 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
+        
+        # Start at the beginning and use selection sort to check each item if its smaller than the one the robot is holding. If it's smaller, swap them, and move to the right. 
+        # Keep doing this and go over each item until we have a sorted list.
         pass
 
 
