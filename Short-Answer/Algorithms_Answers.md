@@ -36,4 +36,4 @@ This is a recursive function and everytime we're looping over it the n is decrem
 
 ## Exercise II
 
-
+Firstly, start by finding the middle floor by dividing the length of n by 2 and drop the egg from here. If the egg breaks, the next step is to eleminate all of the possible floors above. If it does not, eleminate the floors below. Then set that to be the new floor and retrun it. This should be repeated until we have found f. 
