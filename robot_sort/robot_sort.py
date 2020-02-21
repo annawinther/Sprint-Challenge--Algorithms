@@ -102,17 +102,21 @@ class SortingRobot:
         # In order to swap the items the light needs to be on so the robot can see
 
         # BROKEN DOWN PSUEDO CODE
-        # check if the robot is at the beginning of the list
-            # if he cannot move to the right 
-            # set the light on and check if there is an item where he is. 
+        # check if the robot is not at the end of the list (as longas he can move to the right, he is good to keep moving to the right)
+            # if he can move to the right 
+            # swap the item with the item at the index he is currecntly at. This will also sawp None for the item in front.
+            # Move to the next item --> to the right
+            # check and compare the two items. If bigger than the item in front
+                # turn the lights on and swap items
                 # if there is, compare them 
                     # swap if the one he's holding is greater than the one comparing with
-                # otherwise swap with None
-            # once finished, move to the left and compare and check again
-        
-
-        pass
-
+                # then move back one step to the left and swap the current item for None 
+                # then move right and repeat until he has sorted the whole list. 
+        # If the robot can no longer move to the right --> I want to make sure that we are at the end of the list and if no swaps were done or the robot goes back to the beginning
+            # check to see if the lights are on
+                # if so turn them off
+                # check to see if he can move left  
+                    # as long as he can move to the left, so so to get all the way back to the beginning.
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
@@ -121,6 +125,6 @@ if __name__ == "__main__":
     l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
 
     robot = SortingRobot(l)
-
+    
     robot.sort()
     print(robot._list)
