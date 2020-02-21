@@ -102,21 +102,41 @@ class SortingRobot:
         # In order to swap the items the light needs to be on so the robot can see
 
         # BROKEN DOWN PSUEDO CODE
+        while True:
         # check if the robot is not at the end of the list (as longas he can move to the right, he is good to keep moving to the right)
+            # If the robot can no longer move to the right --> I want to make sure that we are at the end of the list and if no swaps were done or the robot goes back to the beginning
+            if not self.can_move_right():
+                # check to see if the lights are on
+                if self.light_is_on():
+                    # if so turn them off
+                    self.set_light_off()
+                    # check to see if he can move left  
+                    while self.can_move_left():
+                    # as long as he can move to the left, so so to get all the way back to the beginning. 
+                        self.move_left()
+                # otherwise end 
+                else:
+                    break
+
             # if he can move to the right 
-            # swap the item with the item at the index he is currecntly at. This will also sawp None for the item in front.
+            # swap the item with the item at the index he is currecntly at (None). This will also swap None for the item in front.
+            self.swap_item()
             # Move to the next item --> to the right
+            self.move_right()
+
             # check and compare the two items. If bigger than the item in front
+            # if there is, compare them 
+            if self.compare_item() > 0:
                 # turn the lights on and swap items
-                # if there is, compare them 
-                    # swap if the one he's holding is greater than the one comparing with
-                # then move back one step to the left and swap the current item for None 
-                # then move right and repeat until he has sorted the whole list. 
-        # If the robot can no longer move to the right --> I want to make sure that we are at the end of the list and if no swaps were done or the robot goes back to the beginning
-            # check to see if the lights are on
-                # if so turn them off
-                # check to see if he can move left  
-                    # as long as he can move to the left, so so to get all the way back to the beginning.
+                self.set_light_on()
+                # swap if the one he's holding is greater than the one comparing with
+                self.swap_item()
+
+            # then move back one step to the left and swap the current item for None 
+            self.move_left()
+            self.swap_item()
+            # then move right and repeat until he has sorted the whole list. 
+            self.move_right()
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
